@@ -1,2 +1,12 @@
 # last-test
-Oliver project repository for 360a6837-b813-4913-8e7b-8c50c1cae8ce
+
+Oliver project repository.
+
+## Folder Structure
+
+- `repository/workflow-analysis/`
+- `repository/business-case/`
+- `repository/ai-opportunity-assessment/`
+- `repository/functional-prototype/`
+- `repository/technical-specifications/`
+- `repository/meeting-notes/`
