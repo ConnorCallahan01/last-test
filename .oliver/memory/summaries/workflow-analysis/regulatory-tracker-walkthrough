@@ -1,0 +1,30 @@
+# Regulatory Tracker - Complete User Journey Walkthrough
+
+**Source**: repository/workflow-analysis/regulatory-tracker-walkthrough (1).md
+**Type**: Design Document
+**Upload Date**: 2026-02-09
+**Source SHA**: Not provided
+
+## Key Points
+
+- The Regulatory Tracker is an AI-powered compliance platform combining Next.js frontend, FastAPI backend, and Claude AI to automatically monitor and analyze regulatory changes with minimal manual effort
+- The system implements a 7-stage orchestration pipeline (Initializing → Retrieving Sources → Detecting Changes → Analyzing → Scoring → Generating Artifacts → Finalizing) that runs asynchronously in the background
+- Users can start regulatory scans by specifying domain, jurisdiction, and sub-domains, which triggers Claude AI analysis to determine relevance, impact level (Low/Medium/High/Critical), and generate structured recommendations
+- The workflow management system guides verified regulatory changes through formal review stages (Draft → In Review → Verified) with governance controls and audit trails
+- Professional documentation is automatically generated in both Markdown and Word formats, eliminating manual report creation and saving compliance teams 70-80% of workload
+- The Knowledge Store provides a searchable archive of verified regulatory changes with filtering by impact level, date range, and domain for organization-wide compliance reference
+
+## Entities and Topics
+
+- **ScanOrchestrator**: Central coordinator managing all 7 stages of regulatory analysis pipeline with state transitions and error handling
+- **ChangeDetectionService**: Identifies material regulatory document changes using SHA-256 content hashing and regex-based keyword detection
+- **LLMService**: Integrates with Claude API (`claude-sonnet-4-20250514`) to construct analysis prompts and parse structured JSON responses for regulatory assessment
+- **ArtifactGenerator**: Automatically creates professional Markdown artifacts and formatted Word documents (.docx) for compliance documentation
+- **SQLite Database**: Stores scan records, analysis results, workflow status, and metadata for real-time dashboard and historical tracking
+- **Mock Regulatory Sources**: Four demonstration documents including FinCEN CDD Amendment, FinCEN SAR Advisory, OCC Transaction Monitoring Guidance, and Federal Reserve AML Procedures
+- **Claude AI Analysis**: Evaluates regulatory changes for relevance, impact level, affected compliance areas, recommended actions, and confidence scoring (0.0-1.0)
+- **Workflow Management**: Three-stage review process with status tracking, timestamps, comments, and audit trails for governance compliance
+
+## Relevance to Project
+
+This document provides a comprehensive technical walkthrough of an AI-agent-driven compliance automation system, serving as a detailed design reference for workflow orchestration, backend agentic patterns, and human-in-the-loop governance systems. The document demonstrates practical implementation of multi-stage pipeline processing, LLM integration with structured output, and knowledge management systems—making it highly relevant for understanding best practices in building scalable, auditable agent-based applications that combine AI analysis with formal review workflows.
